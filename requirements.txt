@@ -1,6 +1,5 @@
 Django==1.5.4
 South
-PIL
 pytz
 django-dynamicresponse
 wsgiref
@@ -27,3 +26,4 @@ markdown
 django-markup
 django-widgeter
 feedparser
+django-mptt

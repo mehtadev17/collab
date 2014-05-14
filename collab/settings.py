@@ -55,6 +55,7 @@ TEMPLATE_CONTEXT_PROCESSORS = ("django.contrib.auth.context_processors.auth",
 "django.contrib.messages.context_processors.messages")
 
 TEMPLATE_CONTEXT_PROCESSORS += ('django.core.context_processors.request',)
+TEMPLATE_CONTEXT_PROCESSORS += ('collab.context_processors.collab_context',)
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -88,6 +89,7 @@ INSTALLED_APPS = (
     'cache_tools',
     'crispy_forms',
     'haystack',
+    'mptt',
     'pipeline',
     'reversion',
     'ordered_model',
@@ -99,6 +101,7 @@ INSTALLED_APPS = (
     'core.search',
     'core.stats',
     'core.taggit',
+    'core.custom_comments',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -194,6 +197,9 @@ VALID_DOMAINS = ['']
 
 PROJECT_URL = 'http://collab.demo'
 
+COLLAB_CONTEXT = {
+}
+
 from collab.local_settings import *
 from collab.local_apps import *
 
@@ -207,3 +213,5 @@ if AUTHENTICATION != 'model':
 from settings_helper import load_app_middlewares
 
 MIDDLEWARE_CLASSES = load_app_middlewares(MIDDLEWARE_CLASSES)
+
+COMMENTS_APP = 'core.custom_comments'
