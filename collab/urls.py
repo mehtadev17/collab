@@ -88,6 +88,14 @@ if 'press_clips' in settings.INSTALLED_APPS:
     urlpatterns.append(url(r'^press_clips/', include(
         'press_clips.urls', namespace="press_clips")))
 
+if 'mystery' in settings.INSTALLED_APPS:
+    urlpatterns.append(url(r'^mystery/', include(
+        'mystery.urls', namespace="mystery")))
+
+if 'wizwiz' in settings.INSTALLED_APPS:
+    urlpatterns.append(url(r'^wiz/', include(
+        'wizwiz.urls', namespace="wiz")))
+
 if 'django.contrib.comments' in settings.INSTALLED_APPS:
     urlpatterns.append(url(r'^comments/',
         include('django.contrib.comments.urls')))
