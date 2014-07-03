@@ -72,13 +72,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'collab.urls'
-HAYSTACK_CONNECTIONS = {
-    'default': {
-        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
-        'URL': 'http://127.0.0.1:9200/',
-        'INDEX_NAME': 'haystack',
-    },
-}
+
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'collab.wsgi.application'
 

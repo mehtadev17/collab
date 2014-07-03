@@ -99,11 +99,3 @@ if 'wizwiz' in settings.INSTALLED_APPS:
 if 'django.contrib.comments' in settings.INSTALLED_APPS:
     urlpatterns.append(url(r'^comments/',
         include('django.contrib.comments.urls')))
-
-if 'idea' in settings.INSTALLED_APPS and \
-        'django.contrib.comments' in settings.INSTALLED_APPS and\
-        'haystack' in settings.INSTALLED_APPS:
-    urlpatterns.append(url(r'^haystack/', include('haystack.urls')))
-    urlpatterns.append(url(r'^comments/',
-        include('django.contrib.comments.urls')))
-    urlpatterns.append(url(r'^idea/', include('idea.urls')))
